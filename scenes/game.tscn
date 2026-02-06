@@ -20,3 +20,9 @@ offset_top = -124.0
 offset_right = 356.0
 offset_bottom = -101.0
 text = "Label de Adria"
+[node name="test2" type="Label" parent="." unique_id=559272722]
+offset_left = 139.0
+offset_top = 173.0
+offset_right = 179.0
+offset_bottom = 196.0
+text = "hola soy la label del test en paralelo"
