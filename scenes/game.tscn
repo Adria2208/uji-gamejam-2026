@@ -13,3 +13,10 @@ texture = ExtResource("1_uwrxv")
 offset_right = 40.0
 offset_bottom = 23.0
 text = "hola test label numero 1"
+
+[node name="Label2" type="Label" parent="." unique_id=1264806214]
+offset_left = 167.0
+offset_top = -124.0
+offset_right = 356.0
+offset_bottom = -101.0
+text = "Label de Adria"
