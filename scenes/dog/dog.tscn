@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ojs817hoakhc"]
+
+[ext_resource type="Script" uid="uid://gpboh2joeexr" path="res://scripts/dog/dog_state_machine.gd" id="1_1k8nb"]
+[ext_resource type="Texture2D" uid="uid://bdswi1gla1b6s" path="res://assets/placeholder/jake-el-perro-png-clipart.jpg" id="1_ikmn5"]
+[ext_resource type="Script" uid="uid://cmj7hgj4ykvh4" path="res://scripts/dog/search_ball.gd" id="2_afgdo"]
+[ext_resource type="Script" uid="uid://b23tgy3ccniax" path="res://scripts/dog/chase_ball_state.gd" id="3_ikmn5"]
+[ext_resource type="Script" uid="uid://cr128gyemsq2i" path="res://scripts/dog/bite_ball_state.gd" id="4_3ci4a"]
+[ext_resource type="Script" uid="uid://cq8itxml5dvur" path="res://scripts/dog/interact_player_state.gd" id="6_3ci4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afgdo"]
+size = Vector2(92, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ci4a"]
+atlas = ExtResource("1_ikmn5")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8nhp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ci4a")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}]
+
+[node name="Dog" type="CharacterBody2D" unique_id=899626893]
+position = Vector2(101, 81)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=172702154]
+position = Vector2(9, 6)
+shape = SubResource("RectangleShape2D_afgdo")
+
+[node name="DogAnimations" type="AnimatedSprite2D" parent="." unique_id=1379789738]
+position = Vector2(8.000015, 8.000015)
+scale = Vector2(0.24, 0.24)
+sprite_frames = SubResource("SpriteFrames_n8nhp")
+animation = &"test"
+
+[node name="DogStateMachine" type="Node" parent="." unique_id=1685228326 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("1_1k8nb")
+starting_state = NodePath("SearchingState")
+
+[node name="SearchingState" type="Node" parent="DogStateMachine" unique_id=104599626 node_paths=PackedStringArray("chase_ball_state", "interact_player_state")]
+script = ExtResource("2_afgdo")
+chase_ball_state = NodePath("../ChasingState")
+interact_player_state = NodePath("../InteractState")
+dog_animation_name = null
+dog_move_speed = null
+
+[node name="ChasingState" type="Node" parent="DogStateMachine" unique_id=1052787383 node_paths=PackedStringArray("search_ball_state", "bite_ball_state", "interact_player_state")]
+script = ExtResource("3_ikmn5")
+search_ball_state = NodePath("../SearchingState")
+bite_ball_state = NodePath("../BitingState")
+interact_player_state = NodePath("../InteractState")
+dog_animation_name = null
+dog_move_speed = null
+
+[node name="BitingState" type="Node" parent="DogStateMachine" unique_id=1331488114 node_paths=PackedStringArray("search_ball_state")]
+script = ExtResource("4_3ci4a")
+search_ball_state = NodePath("../SearchingState")
+dog_animation_name = null
+dog_move_speed = null
+
+[node name="InteractState" type="Node" parent="DogStateMachine" unique_id=1970208834 node_paths=PackedStringArray("search_ball")]
+script = ExtResource("6_3ci4a")
+search_ball = NodePath("../SearchingState")
+dog_animation_name = null
+dog_move_speed = null
