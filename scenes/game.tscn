@@ -8,3 +8,15 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=459182328]
 texture = ExtResource("1_uwrxv")
+
+[node name="Label" type="Label" parent="." unique_id=1262606677]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "hola test label numero 1"
+
+[node name="test2" type="Label" parent="." unique_id=559272722]
+offset_left = 139.0
+offset_top = 173.0
+offset_right = 179.0
+offset_bottom = 196.0
+text = "hola soy la label del test en paralelo"
