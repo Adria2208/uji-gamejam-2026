@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c1ntyuni6i2vj"]
+
+[ext_resource type="Script" uid="uid://cmukx1u25weru" path="res://scripts/audio/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="Script" uid="uid://deheqr7mqwwe7" path="res://scripts/audio/sound_effect.gd" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://emoeph8b8cmg" path="res://assets/sound_effects/dog_bark.wav" id="3_m6ggh"]
+
+[sub_resource type="Resource" id="Resource_aoitu"]
+script = ExtResource("2_3asnw")
+sound_effect = ExtResource("3_m6ggh")
+pitch_scale = 1.5
+metadata/_custom_type_script = "uid://deheqr7mqwwe7"
+
+[node name="AudioManager" type="Node2D" unique_id=1313536047]
+script = ExtResource("1_8qd8g")
+sound_effects = Array[ExtResource("2_3asnw")]([SubResource("Resource_aoitu")])

@@ -3,7 +3,6 @@ extends Node
 
 @export var dog_animation_name: String
 @export var dog_move_speed: float = 200.0
-@onready var game_manager: Node = get_tree().root.get_child(0)
 
 var parent: Dog
 

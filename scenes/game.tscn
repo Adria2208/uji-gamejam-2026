@@ -65,17 +65,20 @@ sources/1 = SubResource("TileSetAtlasSource_lnu2h")
 [node name="MainGame" type="Node2D" unique_id=999736679]
 script = ExtResource("1_yqjtg")
 
-[node name="Bola" parent="." unique_id=652451009 instance=ExtResource("2_lnu2h")]
+[node name="Bola" parent="." unique_id=652451009 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
 position = Vector2(420, -141)
+game_manager = NodePath("..")
 
-[node name="Bola2" parent="." unique_id=1656677400 instance=ExtResource("2_lnu2h")]
+[node name="Bola2" parent="." unique_id=1656677400 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
 position = Vector2(832, -198)
+game_manager = NodePath("..")
 
-[node name="Bola3" parent="." unique_id=980727318 instance=ExtResource("2_lnu2h")]
+[node name="Bola3" parent="." unique_id=980727318 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
 position = Vector2(832, -354)
+game_manager = NodePath("..")
 
 [node name="BallPicker" type="Timer" parent="." unique_id=932920554]
 wait_time = 2.0
@@ -92,7 +95,8 @@ position = Vector2(576, 324)
 [node name="Player" parent="." unique_id=2031485755 instance=ExtResource("1_uwrxv")]
 position = Vector2(576, 352)
 
-[node name="Dog" parent="." unique_id=899626893 instance=ExtResource("5_iywne")]
+[node name="Dog" parent="." unique_id=899626893 node_paths=PackedStringArray("game_manager") instance=ExtResource("5_iywne")]
 position = Vector2(923, 421)
+game_manager = NodePath("..")
 
 [connection signal="timeout" from="BallPicker" to="." method="_on_ball_picker_timeout"]
