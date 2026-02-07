@@ -13,8 +13,8 @@ func process_frame(delta: float) -> Dog_State:
 		return interact_player_state
 	
 	parent.position = parent.position.move_toward(parent.closest_ball.position,delta * parent.dog_speed)
-	
-	if abs(parent.closest_ball.position - parent.position) < Vector2(10.0,10.0):
+	if parent.position.distance_to(parent.closest_ball.position) < 30.0:
+		print("He mordido la pelota")
 		return bite_state
 	else:
 		return null
