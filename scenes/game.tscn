@@ -91,6 +91,7 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=1866762672]
 position = Vector2(576, 324)
+zoom = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=2031485755 instance=ExtResource("1_uwrxv")]
 position = Vector2(576, 352)
