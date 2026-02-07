@@ -1,7 +1,7 @@
 class_name Ball
 extends Node2D
 
-@export var ball_speed: float = 5.0
+@export var ball_speed: float = 1.0
 
 @onready var ball_sprite: Sprite2D = $BallSprite
 @onready var ball_area: Area2D = $BallArea
