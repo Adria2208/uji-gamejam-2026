@@ -25,9 +25,9 @@ func _closest_ball():
 	parent.closest_ball = closest_current_ball
 
 func search_for_ball():
-	for i in range(game_manager.ball_array.size()):
-		if game_manager.ball_array[i].is_ball_pickable == true:
-			avaliable_balls.append(game_manager.ball_array[i])
+	for i in range(game_manager.active_balls.size()):
+		if game_manager.active_balls[i].is_ball_pickable == true:
+			avaliable_balls.append(game_manager.active_balls[i])
 	if avaliable_balls.size() != 0:
 		_closest_ball()
 		return chase_state

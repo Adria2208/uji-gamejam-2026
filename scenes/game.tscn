@@ -78,7 +78,7 @@ top_level = true
 position = Vector2(832, -354)
 
 [node name="BallPicker" type="Timer" parent="." unique_id=932920554]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=145846966]
