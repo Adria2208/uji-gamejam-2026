@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnpk505i1k3jk" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c3gp7whl0537w" path="res://scenes/ball/ball.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://cw40ol7kjbbyi" path="res://assets/tileset/tilemap-grass-32.png" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ojs817hoakhc" path="res://scenes/dog/dog.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("3_lbhrr")
@@ -61,7 +62,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_lnu2h")
 
-[node name="Node2D" type="Node2D" unique_id=999736679]
+[node name="MainGame" type="Node2D" unique_id=999736679]
 script = ExtResource("1_yqjtg")
 
 [node name="Bola" parent="." unique_id=652451009 instance=ExtResource("2_lnu2h")]
@@ -90,5 +91,7 @@ position = Vector2(576, 324)
 
 [node name="Player" parent="." unique_id=2031485755 instance=ExtResource("1_uwrxv")]
 position = Vector2(576, 352)
+
+[node name="Dog" parent="." unique_id=899626893 instance=ExtResource("5_iywne")]
 
 [connection signal="timeout" from="BallPicker" to="." method="_on_ball_picker_timeout"]

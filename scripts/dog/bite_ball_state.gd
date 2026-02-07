@@ -1,6 +1,6 @@
 extends Dog_State
 
-@export var search_ball_state: Dog_State
+@export var wait_state: Dog_State
 
 func enter() -> void:
 	pass

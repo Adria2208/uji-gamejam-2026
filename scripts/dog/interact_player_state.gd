@@ -1,3 +1,3 @@
 extends Dog_State
 
-@export var search_ball: Dog_State
+@export var wait_state: Dog_State

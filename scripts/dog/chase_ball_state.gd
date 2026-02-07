@@ -1,7 +1,7 @@
 extends Dog_State
 
-@export var search_ball_state: Dog_State
-@export var bite_ball_state: Dog_State
+@export var wait_state: Dog_State
+@export var bite_state: Dog_State
 @export var interact_player_state: Dog_State
 
 func enter() -> void:
