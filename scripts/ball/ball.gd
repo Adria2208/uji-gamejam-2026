@@ -6,7 +6,7 @@ extends Node2D
 @onready var ball_sprite: Sprite2D = $BallSprite
 @onready var ball_area: Area2D = $BallArea
 @onready var ball_area_collision: CollisionShape2D = $BallArea/BallAreaCollision
-@onready var game_manager: Node = get_tree().root.get_child(0)
+@export var game_manager: Node2D
 
 var is_ball_active: bool = false #Elegible para caer
 var is_ball_pickable: bool = false #Se puede interactuar con ella

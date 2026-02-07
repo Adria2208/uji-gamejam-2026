@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animations = $DogAnimations
 @onready var dog_state_machine = $DogStateMachine
 
-@onready var game_manager: Node = get_tree().root.get_child(0)
+@export var game_manager: Node2D
 
 @onready var interacting_with_player: bool = false
 @onready var closest_ball: Ball
