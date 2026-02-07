@@ -26,5 +26,6 @@ func get_random_point(p1: Vector2, p2:Vector2) -> Vector2:
 func _on_ball_picker_timeout() -> void:
 	var random_index = randi_range(0,ball_array.size()-1)
 	var picked_ball = ball_array[random_index]
-	picked_ball.move_ball(picked_ball)
-	print(str(random_index) + "" + str(picked_ball.destination))
+	print(str(picked_ball.is_ball_active) + "" + str(random_index))
+	if picked_ball.is_ball_active == false:
+		picked_ball.move_ball_downwards(picked_ball)
