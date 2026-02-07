@@ -18,17 +18,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
-radius = 59.0
-height = 236.0
+radius = 23.967554
+height = 101.66899
 
 [node name="Player" type="CharacterBody2D" unique_id=2031485755]
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=802722885]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671576015]
-position = Vector2(0, -57)
+position = Vector2(0, -26)
+scale = Vector2(1.2934153, 1.1212858)
 shape = SubResource("CapsuleShape2D_qlg0r")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2072375617 node_paths=PackedStringArray("starting_state")]
