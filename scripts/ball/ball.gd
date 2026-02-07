@@ -3,26 +3,29 @@ extends Node2D
 
 @export var ball_speed: float = 1.0
 
+
 @onready var ball_sprite: Sprite2D = $BallSprite
 @onready var ball_area: Area2D = $BallArea
 @onready var ball_area_collision: CollisionShape2D = $BallArea/BallAreaCollision
+@onready var game_manager: Node = get_tree().root.get_child(0)
 
 var is_ball_active: bool = false
 var ball_position: Vector2
-var destination = GameManager.get_random_point(GameManager.MIN_MARGIN,GameManager.MAX_MARGIN)
+var destination: Vector2
 
 func _ready() -> void:
-	ball_position = GameManager.get_random_point(GameManager.MAX_MARGIN,GameManager.MAX_MARGIN)
+	ball_position = game_manager.get_random_point(game_manager.MAX_MARGIN,game_manager.MAX_MARGIN)
+	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN)
 
 func move_ball_downwards(current_ball: Ball) -> void:
-	destination = GameManager.get_random_point(GameManager.MIN_MARGIN,GameManager.MAX_MARGIN)
+	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN)
 	is_ball_active = true
 	ball_area_collision.disabled = true
 
 	
 func move_ball_upwards(current_ball: Ball) -> void:
-	destination = GameManager.get_random_point(GameManager.MIN_MARGIN,GameManager.MAX_MARGIN)
-	destination.y -= GameManager.VERTICAL_OFFSET
+	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN)
+	destination.y -= game_manager.VERTICAL_OFFSET
 	current_ball.position = destination
 	is_ball_active = false
 
