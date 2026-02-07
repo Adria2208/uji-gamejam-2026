@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://brwhsg37n35e7"]
+
+[ext_resource type="Texture2D" uid="uid://ckpbeu7donu18" path="res://assets/placeholder/tennis-ball-cricket-the-us-open-tennis-tennis-ball-png-image.jpg" id="1_oqv3d"]
+
+[node name="Ball" type="Node2D" unique_id=1178014399]
+
+[node name="Bola" type="Sprite2D" parent="." unique_id=552584754]
+position = Vector2(358.5, 358.5)
+scale = Vector2(0.10375, 0.10375)
+texture = ExtResource("1_oqv3d")
