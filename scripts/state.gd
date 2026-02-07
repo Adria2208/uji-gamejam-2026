@@ -3,6 +3,7 @@ extends Node
 
 @export var dog_animation_name: String
 @export var dog_move_speed: float = 200.0
+@onready var game_manager: Node = get_tree().root.get_child(0)
 
 var parent: Dog
 
@@ -12,11 +13,8 @@ func enter() ->  void:
 func exit() -> void:
 	pass
 
-func process_input(event: InputEvent) -> Dog_State:
+func process_phyisics(delta: float) -> Dog_State:
 	return null
 
 func process_frame(delta: float) -> Dog_State:
-	return null
-
-func process_physics(delta: float) -> Dog_State:
 	return null

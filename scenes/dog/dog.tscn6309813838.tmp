@@ -45,7 +45,7 @@ animation = &"test"
 
 [node name="DogStateMachine" type="Node" parent="." unique_id=1685228326 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("1_1k8nb")
-starting_state = NodePath("WaitState")
+starting_state = NodePath("SearchingState")
 
 [node name="SearchingState" type="Node" parent="DogStateMachine" unique_id=104599626 node_paths=PackedStringArray("chase_state", "interact_player_state", "wait_state")]
 script = ExtResource("2_afgdo")

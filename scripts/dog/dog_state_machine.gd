@@ -15,9 +15,10 @@ func change_state(new_state:Dog_State) -> void:
 	
 	current_state = new_state
 	current_state.enter()
+	print("Entering state: " + str(current_state))
 
-func process_physics(delta: float) -> void:
-	var new_state = current_state.process_physics(delta)
+func process_physics(delta:float) -> void:
+	var new_state = current_state.process_phyisics(delta)
 	if new_state:
 		change_state(new_state)
 
