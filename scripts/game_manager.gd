@@ -2,11 +2,12 @@ extends Node
 
 const BALL_NUMBER: int = 20
 
-const MIN_MARGIN: Vector2 = Vector2.ZERO
-const MAX_MARGIN: Vector2 = Vector2(1152,648)
+const MIN_MARGIN: Vector2 = Vector2(100,100)
+const MAX_MARGIN: Vector2 = Vector2(1050,550)
 const VERTICAL_OFFSET: float = 2000.0
 
 @onready var ball_array: Array = []
+@onready var active_balls: Array = []
 @onready var timer_move_balls: Timer = $BallPicker
 
 func _ready() -> void:
@@ -15,17 +16,19 @@ func _ready() -> void:
 			ball_array.append(child)
 	print(ball_array.size())
 
-
 func get_random_point(p1: Vector2, p2:Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x) 
 	var y_value: float = randf_range(p1.y,p2.y)
 	var result: Vector2 = Vector2(x_value,y_value)
 	return result
 
-
 func _on_ball_picker_timeout() -> void:
 	var random_index = randi_range(0,ball_array.size()-1)
-	var picked_ball = ball_array[random_index]
-	print(str(picked_ball.is_ball_active) + "" + str(random_index))
-	if picked_ball.is_ball_active == false:
+	if ball_array.size() != 0:
+		var picked_ball = ball_array[random_index]
+		active_balls.append(picked_ball)
+		ball_array.remove_at(random_index)
+		print(str(picked_ball.is_ball_active) + "" + str(random_index))
 		picked_ball.move_ball_downwards(picked_ball)
+	else:
+		pass

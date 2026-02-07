@@ -3,7 +3,6 @@ extends Node2D
 
 @export var ball_speed: float = 150.0
 
-
 @onready var ball_sprite: Sprite2D = $BallSprite
 @onready var ball_area: Area2D = $BallArea
 @onready var ball_area_collision: CollisionShape2D = $BallArea/BallAreaCollision
@@ -25,6 +24,14 @@ func move_ball_downwards(current_ball: Ball) -> void:
 
 	
 func move_ball_upwards(current_ball: Ball) -> void:
+	var ball_index: int
+	game_manager.ball_array.append(current_ball)
+	for i in range(game_manager.active_balls.size()):
+		if game_manager.active_balls[i] == current_ball:
+			ball_index = i
+	print("Moving ball upwards" + str(ball_index))
+	game_manager.active_balls.remove_at(ball_index)
+	
 	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN)
 	destination.y -= game_manager.VERTICAL_OFFSET
 	current_ball.position = destination
