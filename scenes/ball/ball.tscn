@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://brwhsg37n35e7"]
+[gd_scene format=3 uid="uid://c3gp7whl0537w"]
 
-[ext_resource type="Texture2D" uid="uid://ckpbeu7donu18" path="res://assets/placeholder/tennis-ball-cricket-the-us-open-tennis-tennis-ball-png-image.jpg" id="1_oqv3d"]
+[ext_resource type="Script" uid="uid://cffsb3ohg3e5k" path="res://scripts/ball/ball.gd" id="1_nv6q1"]
+[ext_resource type="Texture2D" uid="uid://cvu8b8cvhmmg1" path="res://assets/definitive/Ball_SPRITE.png" id="1_oqv3d"]
 
-[node name="Ball" type="Node2D" unique_id=1178014399]
+[node name="Bola" type="CharacterBody2D" unique_id=652451009]
+position = Vector2(194, 56)
+script = ExtResource("1_nv6q1")
 
-[node name="Bola" type="Sprite2D" parent="." unique_id=552584754]
-position = Vector2(358.5, 358.5)
-scale = Vector2(0.10375, 0.10375)
+[node name="BallSprite" type="Sprite2D" parent="." unique_id=1029820386]
+position = Vector2(0, -1)
+scale = Vector2(0.49718738, 0.49718738)
 texture = ExtResource("1_oqv3d")

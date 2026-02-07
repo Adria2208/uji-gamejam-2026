@@ -1,10 +1,30 @@
 [gd_scene format=3 uid="uid://djubvjtkogkp4"]
 
 [ext_resource type="Texture2D" uid="uid://2bidux3sxf6j" path="res://icon.svg" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bnpk505i1k3jk" path="res://scripts/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://c3gp7whl0537w" path="res://scenes/ball/ball.tscn" id="2_lnu2h"]
 
 [node name="Node2D" type="Node2D" unique_id=999736679]
+script = ExtResource("1_yqjtg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1405934039]
+anchor_mode = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=459182328]
+position = Vector2(1018, 119)
 texture = ExtResource("1_uwrxv")
+
+[node name="Bola" parent="." unique_id=652451009 instance=ExtResource("2_lnu2h")]
+position = Vector2(124, -144)
+
+[node name="Bola2" parent="." unique_id=1656677400 instance=ExtResource("2_lnu2h")]
+position = Vector2(945, -188)
+
+[node name="Bola3" parent="." unique_id=980727318 instance=ExtResource("2_lnu2h")]
+position = Vector2(459, -180)
+
+[node name="BallPicker" type="Timer" parent="." unique_id=932920554]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="BallPicker" to="." method="_on_ball_picker_timeout"]
