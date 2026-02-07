@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dcas8wds0rol6"]
+
+[ext_resource type="Texture2D" uid="uid://2bidux3sxf6j" path="res://icon.svg" id="1_g2els"]
+[ext_resource type="Script" uid="uid://c33k2efxep7ga" path="res://scripts/player/player.gd" id="1_qlg0r"]
+[ext_resource type="Script" uid="uid://dy3grwu4dv215" path="res://scripts/player/state_machine/state_machine.gd" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://b7eftg5ib0ebv" path="res://scripts/player/state_machine/states/idle.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://tl8o51uxmgp1" path="res://scripts/player/state_machine/states/move.gd" id="4_dqkch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
+radius = 23.967554
+height = 101.66899
+
+[node name="Player" type="CharacterBody2D" unique_id=2031485755]
+script = ExtResource("1_qlg0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=802722885]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671576015]
+position = Vector2(0, -26)
+scale = Vector2(1.2934153, 1.1212858)
+shape = SubResource("CapsuleShape2D_qlg0r")
+
+[node name="StateMachine" type="Node" parent="." unique_id=2072375617 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("2_qhqgy")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1330440581 node_paths=PackedStringArray("move_state")]
+script = ExtResource("3_qhqgy")
+move_state = NodePath("../Move")
+animation_name = "default"
+
+[node name="Move" type="Node" parent="StateMachine" unique_id=318016170 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("4_dqkch")
+idle_state = NodePath("../Idle")
+animation_name = "default"
