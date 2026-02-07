@@ -8,7 +8,8 @@ extends CharacterBody2D
 @onready var game_manager: Node = get_tree().root.get_child(0)
 
 @onready var interacting_with_player: bool = false
-@onready var closest_ball_position: Vector2
+@onready var closest_ball: Ball
+@onready var dog_speed: float = 200.0
 
 func _ready() -> void:
 	dog_state_machine.init(self)
