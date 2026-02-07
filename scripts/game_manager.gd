@@ -14,7 +14,6 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Ball:
 			ball_array.append(child)
-	print(ball_array.size())
 
 func get_random_point(p1: Vector2, p2:Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x) 
@@ -28,7 +27,6 @@ func _on_ball_picker_timeout() -> void:
 		var picked_ball = ball_array[random_index]
 		active_balls.append(picked_ball)
 		ball_array.remove_at(random_index)
-		print(str(picked_ball.is_ball_active) + "" + str(random_index))
 		picked_ball.move_ball_downwards(picked_ball)
 	else:
 		pass

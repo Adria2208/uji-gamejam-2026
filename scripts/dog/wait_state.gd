@@ -2,7 +2,6 @@ extends Dog_State
 
 @export var search_state: Dog_State
 const WAIT_TIME = 2.0
-
 var has_waited: bool = false
 
 func enter()-> void:

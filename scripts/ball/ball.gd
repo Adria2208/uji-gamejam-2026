@@ -29,7 +29,6 @@ func move_ball_upwards(current_ball: Ball) -> void:
 	for i in range(game_manager.active_balls.size()):
 		if game_manager.active_balls[i] == current_ball:
 			ball_index = i
-	print("Moving ball upwards" + str(ball_index))
 	game_manager.active_balls.remove_at(ball_index)
 	
 	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN)
@@ -49,3 +48,7 @@ func _process(delta: float) -> void:
 
 func _on_ball_area_body_entered(body: Node2D) -> void:
 	move_ball_upwards(self)
+	if body is Dog:
+		print("Ha entrado morcillo")
+	if body is Player:
+		print("Ha entrado manolo")

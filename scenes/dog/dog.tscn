@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c3sqfo1ek7wk8" path="res://scripts/dog/wait_state.gd" id="7_n8nhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afgdo"]
-size = Vector2(92, 78)
+size = Vector2(44, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ci4a"]
 atlas = ExtResource("1_ikmn5")
@@ -31,14 +31,16 @@ animations = [{
 position = Vector2(101, 81)
 script = ExtResource("1_dilyc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1240677618]
+[node name="DogCollision" type="CollisionShape2D" parent="." unique_id=13040883]
+shape = SubResource("RectangleShape2D_afgdo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=172702154]
-position = Vector2(9, 6)
+[node name="DogArea" type="Area2D" parent="." unique_id=1240677618]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DogArea" unique_id=172702154]
 shape = SubResource("RectangleShape2D_afgdo")
 
 [node name="DogAnimations" type="AnimatedSprite2D" parent="." unique_id=1379789738]
-position = Vector2(8.000015, 8.000015)
+position = Vector2(9.536743e-07, 9.536743e-07)
 scale = Vector2(0.24, 0.24)
 sprite_frames = SubResource("SpriteFrames_n8nhp")
 animation = &"test"
