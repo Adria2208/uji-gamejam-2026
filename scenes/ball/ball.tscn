@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3gp7whl0537w"]
+
+[ext_resource type="Script" uid="uid://cffsb3ohg3e5k" path="res://scripts/ball/ball.gd" id="1_nv6q1"]
+[ext_resource type="Texture2D" uid="uid://cvu8b8cvhmmg1" path="res://assets/definitive/Ball_SPRITE.png" id="1_oqv3d"]
+
+[node name="Bola" type="CharacterBody2D" unique_id=652451009]
+position = Vector2(194, 56)
+script = ExtResource("1_nv6q1")
+
+[node name="BallSprite" type="Sprite2D" parent="." unique_id=1029820386]
+position = Vector2(0, -1)
+scale = Vector2(0.49718738, 0.49718738)
+texture = ExtResource("1_oqv3d")

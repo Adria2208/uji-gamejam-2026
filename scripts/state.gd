@@ -1,5 +1,4 @@
 class_name Dog_State
-
 extends Node
 
 @export var dog_animation_name: String
