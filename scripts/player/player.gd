@@ -13,6 +13,11 @@ func _ready() -> void:
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+	
 	state_machine.process_input(event)
 	
 func _physics_process(delta: float) -> void:
