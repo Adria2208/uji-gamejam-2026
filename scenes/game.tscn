@@ -130,25 +130,23 @@ zoom = Vector2(2, 2)
 position = Vector2(923, 421)
 game_manager = NodePath("..")
 
-[node name="Balls" type="Node" parent="." unique_id=2129556857]
-
-[node name="Bola" parent="Balls" unique_id=652451009 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
-top_level = true
-position = Vector2(420, -141)
-game_manager = NodePath("../..")
-
-[node name="Bola2" parent="Balls" unique_id=1656677400 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
-top_level = true
-position = Vector2(832, -198)
-game_manager = NodePath("../..")
-
-[node name="Bola3" parent="Balls" unique_id=980727318 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
-top_level = true
-position = Vector2(832, -354)
-game_manager = NodePath("../..")
-
 [node name="BallPicker" type="Timer" parent="." unique_id=932920554]
 wait_time = 2.0
 autostart = true
+
+[node name="Bola" parent="." unique_id=652451009 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
+top_level = true
+position = Vector2(420, -141)
+game_manager = NodePath("..")
+
+[node name="Bola2" parent="." unique_id=622930484 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
+top_level = true
+position = Vector2(509, -92)
+game_manager = NodePath("..")
+
+[node name="Bola3" parent="." unique_id=780592068 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
+top_level = true
+position = Vector2(576, -59)
+game_manager = NodePath("..")
 
 [connection signal="timeout" from="BallPicker" to="." method="_on_ball_picker_timeout"]
