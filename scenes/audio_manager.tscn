@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://b431ktx84lcgn" path="res://assets/sound_effects/dog_eating.wav" id="6_njtn3"]
 [ext_resource type="AudioStream" uid="uid://c1tbbcry4i0tt" path="res://assets/sound_effects/player_step.wav" id="7_kq7b2"]
 [ext_resource type="AudioStream" uid="uid://c0av0rb6uterx" path="res://assets/sound_effects/tennisball_pickup.wav" id="8_02gw7"]
+[ext_resource type="AudioStream" uid="uid://crjoltv04n2tw" path="res://assets/sound_effects/DOG_INTERACT_NICE.wav" id="9_ujhup"]
+[ext_resource type="AudioStream" uid="uid://c6s1xxhd53rx" path="res://assets/sound_effects/dog_interact_growl.wav" id="10_064dn"]
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_3asnw")
@@ -68,6 +70,21 @@ pitch_scale = 2.3
 pitch_randomness = 0.2
 metadata/_custom_type_script = "uid://deheqr7mqwwe7"
 
+[sub_resource type="Resource" id="Resource_2y2jw"]
+script = ExtResource("2_3asnw")
+limit = 1
+type = 9
+sound_effect = ExtResource("9_ujhup")
+pitch_randomness = 0.3
+metadata/_custom_type_script = "uid://deheqr7mqwwe7"
+
+[sub_resource type="Resource" id="Resource_2y5yn"]
+script = ExtResource("2_3asnw")
+type = 8
+sound_effect = ExtResource("10_064dn")
+volume = 4.0
+metadata/_custom_type_script = "uid://deheqr7mqwwe7"
+
 [node name="AudioManager" type="Node2D" unique_id=1313536047]
 script = ExtResource("1_8qd8g")
-sound_effects = Array[ExtResource("2_3asnw")]([SubResource("Resource_aoitu"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7"), SubResource("Resource_ujhup"), SubResource("Resource_064dn"), SubResource("Resource_ic5jq"), SubResource("Resource_if78k"), SubResource("Resource_8igv3")])
+sound_effects = Array[ExtResource("2_3asnw")]([SubResource("Resource_aoitu"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7"), SubResource("Resource_ujhup"), SubResource("Resource_064dn"), SubResource("Resource_ic5jq"), SubResource("Resource_if78k"), SubResource("Resource_8igv3"), SubResource("Resource_2y2jw"), SubResource("Resource_2y5yn")])
