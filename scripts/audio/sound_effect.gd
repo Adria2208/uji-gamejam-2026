@@ -7,7 +7,8 @@ extends Resource
 enum SOUND_EFFECT_TYPE {
 	DOG_BARK,
 	DOG_GROWL,
-	BALL_POP
+	BALL_POP,
+	DOG_EATING
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

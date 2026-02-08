@@ -8,6 +8,7 @@ func enter() -> void:
 	super()
 	has_bitten = false
 	AudioManager.create_2d_audio_at_location(parent.position, SoundEffect.SOUND_EFFECT_TYPE.DOG_GROWL)
+	AudioManager.create_2d_audio_at_location(parent.position, SoundEffect.SOUND_EFFECT_TYPE.DOG_EATING)
 	await get_tree().create_timer(WAIT_TIME).timeout
 	has_bitten = true
 	
