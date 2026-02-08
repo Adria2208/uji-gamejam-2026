@@ -6,6 +6,7 @@ var has_interacted: bool = false
 const INTERACT_WAIT_TIME = 0.7
 
 func enter() -> void:
+	print(parent.game_manager.player_has_object)
 	parent.animated_sprite.play("idle")
 	parent.game_manager.is_player_interacting = true
 	print("Entrando en el interact state")
@@ -20,3 +21,5 @@ func process_frame(delta: float) -> State:
 
 func exit() -> void:
 	parent.game_manager.is_player_interacting = false
+	parent.game_manager.player_has_object = false
+	parent.game_manager.player_toy.hide()

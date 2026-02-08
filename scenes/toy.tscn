@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsy5t7os0rpij"]
+
+[ext_resource type="Script" uid="uid://dfhe2fxfln7sb" path="res://scripts/interactable_objects/toy.gd" id="1_2u4uf"]
+[ext_resource type="Texture2D" uid="uid://c4rfpsgwya32o" path="res://assets/placeholder/toy_sprite.png" id="1_bwicb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_685ps"]
+size = Vector2(20, 35)
+
+[node name="Toy" type="CharacterBody2D" unique_id=1156767745]
+script = ExtResource("1_2u4uf")
+
+[node name="ToySprite" type="Sprite2D" parent="." unique_id=1291419963]
+texture = ExtResource("1_bwicb")
+
+[node name="ToyCollision" type="CollisionShape2D" parent="." unique_id=1852374966]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_685ps")
+disabled = true
+
+[node name="ToyArea" type="Area2D" parent="." unique_id=717585485]
+
+[node name="ToyAreaCollision" type="CollisionShape2D" parent="ToyArea" unique_id=772720101]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_685ps")
+
+[connection signal="body_entered" from="ToyArea" to="." method="_on_toy_area_body_entered"]
