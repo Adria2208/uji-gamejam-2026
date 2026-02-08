@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dcas8wds0rol6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bnpk505i1k3jk" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c3gp7whl0537w" path="res://scenes/ball/ball.tscn" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://cw40ol7kjbbyi" path="res://assets/tileset/tilemap-grass-32.png" id="3_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://cy3p842l3bcmd" path="res://assets/tileset/tilemap-fence.png" id="3_p57ef"]
+[ext_resource type="Texture2D" uid="uid://cw40ol7kjbbyi" path="res://assets/sprites/tileset/tilemap-grass-32.png" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://cy3p842l3bcmd" path="res://assets/sprites/tileset/tilemap-fence.png" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ojs817hoakhc" path="res://scenes/dog/dog.tscn" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://dyofp7wiflc06" path="res://assets/tileset/tilemap-roof.png" id="5_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://dyofp7wiflc06" path="res://assets/sprites/tileset/tilemap-roof.png" id="5_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("3_lbhrr")

@@ -20,3 +20,22 @@ func process_frame(delta: float) -> Dog_State:
 	else:
 		return wait_state
 	return null
+
+func process_physics(delta: float) -> Dog_State:
+	print("HE ENTRADO EN process_phyisics")
+	var direction: Vector2 = parent.velocity
+	var animation: String = ""
+	
+	if abs(direction.x) > abs(direction.y):
+		animation = "move_side"
+	elif direction.y < 0:
+		animation = "move_down"
+	else:
+		animation = "move_up"
+		
+	if parent.animations.animation != animation:
+		parent.animations.play(animation)
+
+	parent.animations.flip_h = direction.x < 0
+	
+	return null

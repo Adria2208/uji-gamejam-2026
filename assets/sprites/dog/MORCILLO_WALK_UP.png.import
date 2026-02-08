@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3p842l3bcmd"
-path="res://.godot/imported/tilemap-fence.png-2d71c216b027c174b66cb5c56e8879a4.ctex"
+uid="uid://col8wkbxpygcw"
+path="res://.godot/imported/MORCILLO_WALK_UP.png-30b6c58ff6879d25e83ee223de9d2ab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/tilemap-fence.png"
-dest_files=["res://.godot/imported/tilemap-fence.png-2d71c216b027c174b66cb5c56e8879a4.ctex"]
+source_file="res://assets/sprites/dog/MORCILLO_WALK_UP.png"
+dest_files=["res://.godot/imported/MORCILLO_WALK_UP.png-30b6c58ff6879d25e83ee223de9d2ab4.ctex"]
 
 [params]
 

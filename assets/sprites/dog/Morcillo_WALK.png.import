@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw40ol7kjbbyi"
-path="res://.godot/imported/tilemap-grass-32.png-d59acab4716c3fad53ffae6197a61402.ctex"
+uid="uid://cv2mih5vhq37y"
+path="res://.godot/imported/Morcillo_WALK.png-268622c155c8a4a618825ee3d9ad7e07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/tilemap-grass-32.png"
-dest_files=["res://.godot/imported/tilemap-grass-32.png-d59acab4716c3fad53ffae6197a61402.ctex"]
+source_file="res://assets/sprites/dog/Morcillo_WALK.png"
+dest_files=["res://.godot/imported/Morcillo_WALK.png-268622c155c8a4a618825ee3d9ad7e07.ctex"]
 
 [params]
 

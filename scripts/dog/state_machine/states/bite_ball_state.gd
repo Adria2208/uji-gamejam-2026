@@ -5,6 +5,7 @@ const WAIT_TIME = 2.0
 var has_bitten: bool = false
 
 func enter() -> void:
+	super()
 	has_bitten = false
 	await get_tree().create_timer(WAIT_TIME).timeout
 	has_bitten = true
