@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://d3orulepndmkn" path="res://assets/sound_effects/dog_growl.wav" id="4_aoitu"]
 [ext_resource type="AudioStream" uid="uid://dbagofclsuxpb" path="res://assets/sound_effects/tennisball_pop.wav" id="5_njtn3"]
 [ext_resource type="AudioStream" uid="uid://b431ktx84lcgn" path="res://assets/sound_effects/dog_eating.wav" id="6_njtn3"]
+[ext_resource type="AudioStream" uid="uid://c1tbbcry4i0tt" path="res://assets/sound_effects/player_step.wav" id="7_kq7b2"]
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_3asnw")
@@ -33,6 +34,15 @@ type = 3
 sound_effect = ExtResource("6_njtn3")
 metadata/_custom_type_script = "uid://deheqr7mqwwe7"
 
+[sub_resource type="Resource" id="Resource_064dn"]
+script = ExtResource("2_3asnw")
+limit = 1
+type = 4
+sound_effect = ExtResource("7_kq7b2")
+volume = -4.0
+pitch_randomness = 0.4
+metadata/_custom_type_script = "uid://deheqr7mqwwe7"
+
 [node name="AudioManager" type="Node2D" unique_id=1313536047]
 script = ExtResource("1_8qd8g")
-sound_effects = Array[ExtResource("2_3asnw")]([SubResource("Resource_aoitu"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7"), SubResource("Resource_ujhup")])
+sound_effects = Array[ExtResource("2_3asnw")]([SubResource("Resource_aoitu"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7"), SubResource("Resource_ujhup"), SubResource("Resource_064dn")])

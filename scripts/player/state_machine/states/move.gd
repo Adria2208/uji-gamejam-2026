@@ -6,7 +6,6 @@ var idle_state: State
 var interact_state: State
 
 var last_direction: Vector2 = Vector2.ZERO
-var player_move_speed : float = 150.0
 
 func enter() -> void:
 	var  input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -41,7 +40,7 @@ func process_physics(delta: float) -> State:
 		Vector2.LEFT:
 			parent.player_shape_cast.target_position = Vector2(-20,0)
 
-	parent.velocity = current_direction * player_move_speed
+	parent.velocity = current_direction * move_speed
 	parent.move_and_slide()
 
 	if current_direction == Vector2.ZERO:
@@ -50,6 +49,8 @@ func process_physics(delta: float) -> State:
 	if current_direction != last_direction:
 		update_animation(current_direction)
 		last_direction = current_direction
+		
+	parent.play_step_sound()
 	
 	return null
 	

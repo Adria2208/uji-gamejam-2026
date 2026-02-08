@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bjf5i4gqcsgxe"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Script" uid="uid://bdnu6vtwcrv8o" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Shader" uid="uid://dgq7piqqkn3ml" path="res://assets/shaders/scroll.gdshader" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bjvt3wqwryd47" path="res://assets/sprites/main_menu/2x2.png" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://b3s4q7wupl6vj" path="res://scenes/volume_slider.tscn" id="3_bqqt6"]
-[ext_resource type="Script" path="res://scripts/options_menu.gd" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://cagfq7sdppqm6" path="res://scripts/options_menu.gd" id="3_wu84c"]
+[ext_resource type="FontFile" uid="uid://banxfthcqf801" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_rtw2f"]
+[ext_resource type="FontFile" uid="uid://ccoy7i24k582a" path="res://assets/fonts/PixelOperator8.ttf" id="6_oa1go"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wu84c"]
 shader = ExtResource("1_ekxnf")
@@ -72,15 +74,19 @@ stretch_mode = 1
 position = Vector2(-74, -21)
 
 [node name="Menu" type="VBoxContainer" parent="UI" unique_id=1192612003]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -51.0
+offset_top = -2.0
+offset_right = 201.0
+offset_bottom = 50.0
 
 [node name="ButtonStart" type="Button" parent="UI/Menu" unique_id=1219812212]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rtw2f")
 text = "Start"
 
 [node name="ButtonVolumeTutorial" type="Button" parent="UI/Menu" unique_id=385516267]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rtw2f")
 text = "Volume & Tutorial"
 
 [node name="Options" type="VBoxContainer" parent="UI" unique_id=1433247904]
@@ -98,20 +104,25 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ekxnf")
 
 [node name="TutorialLabel" type="Label" parent="UI/Options/Panel" unique_id=1897002229]
 layout_mode = 0
-offset_right = 306.0
-offset_bottom = 249.0
+offset_top = 18.0
+offset_right = 308.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("6_oa1go")
 text = "HOW  TO PLAY:
 
-Mucho textoMucho textoMucho texto
-Mucho textoMucho textoMucho texto
-Mucho textoMucho textoMucho texto
-Mucho textoMucho textoMucho texto"
+W,A,S,D to move
+E to give the dog a toy
+
+Get more balls than your dog!"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Options" unique_id=1124400985]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="UI/Options/VBoxContainer" unique_id=1458466515]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
 text = "Volume"
 
 [node name="VolumeSlider" parent="UI/Options/VBoxContainer" unique_id=322674183 instance=ExtResource("3_bqqt6")]
@@ -119,46 +130,7 @@ layout_mode = 2
 
 [node name="BackButton" type="Button" parent="UI/Options" unique_id=56986376]
 layout_mode = 2
-text = "Back"
-
-[node name="Options2" type="VBoxContainer" parent="UI" unique_id=1593086149]
-offset_left = 831.0
-offset_top = -176.0
-offset_right = 1141.0
-offset_bottom = 157.0
-script = ExtResource("3_wu84c")
-
-[node name="Panel" type="Panel" parent="UI/Options2" unique_id=1156145998]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ekxnf")
-
-[node name="TutorialLabel" type="Label" parent="UI/Options2/Panel" unique_id=1291927539]
-layout_mode = 0
-offset_right = 306.0
-offset_bottom = 249.0
-text = "TUTORIAL
-
-W,A,S,D to move
-E to give the dog a toy
-
-Get more balls than your dog!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Options2" unique_id=858626985]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/Options2/VBoxContainer" unique_id=942344774]
-layout_mode = 2
-text = "Volume"
-
-[node name="VolumeSlider" parent="UI/Options2/VBoxContainer" unique_id=381435480 instance=ExtResource("3_bqqt6")]
-layout_mode = 2
-
-[node name="BackButton" type="Button" parent="UI/Options2" unique_id=1528671062]
-layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rtw2f")
 text = "Back"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=391135896]
@@ -167,4 +139,3 @@ libraries/ = SubResource("AnimationLibrary_8ln24")
 [connection signal="pressed" from="UI/Menu/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="UI/Menu/ButtonVolumeTutorial" to="." method="_on_button_volume_tutorial_pressed"]
 [connection signal="pressed" from="UI/Options/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="UI/Options2/BackButton" to="." method="_on_back_button_pressed"]
