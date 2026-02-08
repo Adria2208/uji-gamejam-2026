@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gpboh2joeexr" path="res://scripts/dog/state_machine/dog_state_machine.gd" id="1_1k8nb"]
 [ext_resource type="Script" uid="uid://cok6fxhsqwsoy" path="res://scripts/dog/dog.gd" id="1_dilyc"]
+[ext_resource type="Texture2D" uid="uid://ul2piftb63u6" path="res://assets/sprites/shadow.png" id="2_3flqx"]
 [ext_resource type="Script" uid="uid://cmj7hgj4ykvh4" path="res://scripts/dog/state_machine/states/search_ball.gd" id="2_afgdo"]
 [ext_resource type="Script" uid="uid://b23tgy3ccniax" path="res://scripts/dog/state_machine/states/chase_ball_state.gd" id="3_ikmn5"]
 [ext_resource type="Script" uid="uid://cr128gyemsq2i" path="res://scripts/dog/state_machine/states/bite_ball_state.gd" id="4_3ci4a"]
@@ -328,6 +329,11 @@ animations = [{
 
 [node name="Dog" type="CharacterBody2D" unique_id=899626893]
 script = ExtResource("1_dilyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=604380767]
+position = Vector2(0, 4)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_3flqx")
 
 [node name="DogCollision" type="CollisionShape2D" parent="." unique_id=13040883]
 shape = SubResource("CircleShape2D_dwjgf")
