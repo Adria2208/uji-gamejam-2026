@@ -2,9 +2,9 @@ extends Node
 
 const BALL_NUMBER: int = 20
 
-const MIN_MARGIN: Vector2 = Vector2(300,170)
-const MAX_MARGIN: Vector2 = Vector2(860,485)
-const VERTICAL_OFFSET: float = 500.0
+const MIN_MARGIN: Vector2 = Vector2(100,100)
+const MAX_MARGIN: Vector2 = Vector2(1050,550)
+const VERTICAL_OFFSET: float = 2000.0
 
 @onready var ball_array: Array = []
 @onready var active_balls: Array = []
