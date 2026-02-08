@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c4rfpsgwya32o" path="res://assets/placeholder/toy_sprite.png" id="12_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://cuxdmfg7l4xcp" path="res://assets/sprites/garden/bbq_animation.png" id="13_trtic"]
 [ext_resource type="Texture2D" uid="uid://cme1vyy5nj4ep" path="res://assets/sprites/garden/dog_house.png" id="14_trtic"]
+[ext_resource type="FontFile" uid="uid://banxfthcqf801" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="17_rysoc"]
+[ext_resource type="Texture2D" uid="uid://cvu8b8cvhmmg1" path="res://assets/sprites/Ball_SPRITE.png" id="18_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dinhu"]
 texture = ExtResource("2_kvpfn")
@@ -317,10 +319,39 @@ position = Vector2(1085, 577)
 scale = Vector2(3.187498, 3.2824898)
 texture = ExtResource("11_rysoc")
 
+[node name="UIBallBackground" type="Sprite2D" parent="CanvasLayer" unique_id=2134230271]
+modulate = Color(0.35625, 0.34623045, 0.34623045, 1)
+position = Vector2(124.000046, 53)
+scale = Vector2(196.00008, 67.207344)
+texture = SubResource("CanvasTexture_dinhu")
+
+[node name="BallOutline" type="Sprite2D" parent="CanvasLayer" unique_id=1462137999]
+position = Vector2(123.24998, 52)
+scale = Vector2(8.109375, 2.4375)
+texture = ExtResource("11_rysoc")
+
 [node name="PlayerToy" type="Sprite2D" parent="CanvasLayer" unique_id=35574466]
 position = Vector2(1087.0001, 576.00006)
 scale = Vector2(1.6875002, 1.6875002)
 texture = ExtResource("12_ssvqc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1797310380]
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 222.0
+offset_bottom = 80.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("17_rysoc")
+text = "Pelotas totales:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UIPelota" type="Sprite2D" parent="CanvasLayer" unique_id=1324033904]
+position = Vector2(47, 48.000004)
+scale = Vector2(0.28645834, 0.28645834)
+texture = ExtResource("18_ssvqc")
 
 [connection signal="timeout" from="GeneralTimer" to="." method="_on_general_timer_timeout"]
 [connection signal="timeout" from="SpawnObjects" to="." method="_on_spawn_objects_timeout"]

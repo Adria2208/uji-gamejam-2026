@@ -14,7 +14,7 @@ const VERTICAL_OFFSET: float = 500.0
 @export var toy: PackedScene = preload("res://scenes/toy.tscn")
 @onready var player_toy: Sprite2D = $CanvasLayer/PlayerToy
 @onready var general_timer: Timer = $GeneralTimer
-
+@onready var total_points_label: RichTextLabel = $CanvasLayer/RichTextLabel
 @onready var total_points: int
 
 var timer_spawn_objects: Timer
