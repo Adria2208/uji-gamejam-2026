@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bjf5i4gqcsgxe"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Script" uid="uid://bdnu6vtwcrv8o" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Shader" uid="uid://dgq7piqqkn3ml" path="res://assets/shaders/scroll.gdshader" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bjvt3wqwryd47" path="res://assets/sprites/main_menu/2x2.png" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://b3s4q7wupl6vj" path="res://scenes/volume_slider.tscn" id="3_bqqt6"]
-[ext_resource type="Script" path="res://scripts/options_menu.gd" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://cagfq7sdppqm6" path="res://scripts/options_menu.gd" id="3_wu84c"]
 [ext_resource type="FontFile" uid="uid://banxfthcqf801" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://chq2a2x50yg2" path="res://assets/sprites/main_menu/LOGO_JUEGO.png" id="4_tbmy8"]
 [ext_resource type="FontFile" uid="uid://ccoy7i24k582a" path="res://assets/fonts/PixelOperator8.ttf" id="6_oa1go"]
@@ -110,15 +110,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ekxnf")
 
 [node name="TutorialLabel" type="Label" parent="UI/Options/Panel" unique_id=1897002229]
 layout_mode = 0
-offset_top = 18.0
+offset_top = 9.0
 offset_right = 308.0
-offset_bottom = 225.0
+offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "HOW  TO PLAY:
 
 W,A,S,D to move
 
 E to give the dog a toy
+
+ESC to Exit the game
 
 
 Get more balls than your dog!"
