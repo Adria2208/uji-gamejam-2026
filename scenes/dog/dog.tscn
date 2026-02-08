@@ -27,8 +27,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dilyc"]
+
 [node name="Dog" type="CharacterBody2D" unique_id=899626893]
-position = Vector2(101, 81)
 script = ExtResource("1_dilyc")
 
 [node name="DogCollision" type="CollisionShape2D" parent="." unique_id=13040883]
@@ -72,3 +73,7 @@ wait_state = NodePath("../WaitState")
 [node name="WaitState" type="Node" parent="DogStateMachine" unique_id=721535979 node_paths=PackedStringArray("search_state")]
 script = ExtResource("7_n8nhp")
 search_state = NodePath("../SearchingState")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384723258]
+shape = SubResource("CircleShape2D_dilyc")
+disabled = true
