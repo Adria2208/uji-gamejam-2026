@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="UJI GameJam 2026"
-run/main_scene="uid://djubvjtkogkp4"
+run/main_scene="uid://bjf5i4gqcsgxe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AudioManager="*uid://c1ntyuni6i2vj"
+Music="*uid://dmbfij2yjv710"
 
 [global_group]
 
