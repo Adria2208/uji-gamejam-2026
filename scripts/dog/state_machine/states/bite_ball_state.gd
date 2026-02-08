@@ -1,7 +1,7 @@
 extends Dog_State
 
 @export var wait_state: Dog_State
-const WAIT_TIME = 2.0
+const WAIT_TIME = 2.5
 var has_bitten: bool = false
 
 func enter() -> void:
