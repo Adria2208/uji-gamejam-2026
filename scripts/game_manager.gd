@@ -12,7 +12,8 @@ const VERTICAL_OFFSET: float = 500.0
 @onready var timer_move_balls: Timer = $BallPicker
 @onready var is_player_interacting: bool = false
 @export var toy: PackedScene = preload("res://scenes/toy.tscn")
-@onready var player_toy: Sprite2D = $UI/PlayerToy
+@onready var player_toy: Sprite2D = $CanvasLayer/PlayerToy
+@onready var general_timer: Timer = $GeneralTimer
 
 @onready var total_points: int
 
@@ -56,3 +57,7 @@ func add_player_toy():
 	player_toy.show()
 	player_has_object = true
 	pass
+
+
+func _on_general_timer_timeout() -> void:
+	get_tree().quit()
