@@ -2,7 +2,8 @@ class_name Dog
 
 extends CharacterBody2D
 
-@onready var animations = $DogAnimations
+@onready var animations: AnimatedSprite2D = $DogAnimations
+
 @onready var dog_state_machine = $DogStateMachine
 @onready var dog_collision = $DogCollision
 
@@ -18,3 +19,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	dog_state_machine.process_frame(delta)
+	
+func _physics_process(delta: float) -> void:
+	dog_state_machine.process_physics(delta)

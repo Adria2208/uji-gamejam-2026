@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dcas8wds0rol6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bnpk505i1k3jk" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c3gp7whl0537w" path="res://scenes/ball/ball.tscn" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://cw40ol7kjbbyi" path="res://assets/tileset/tilemap-grass-32.png" id="3_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://cy3p842l3bcmd" path="res://assets/tileset/tilemap-fence.png" id="3_p57ef"]
+[ext_resource type="Texture2D" uid="uid://cw40ol7kjbbyi" path="res://assets/sprites/tileset/tilemap-grass-32.png" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://cy3p842l3bcmd" path="res://assets/sprites/tileset/tilemap-fence.png" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ojs817hoakhc" path="res://scenes/dog/dog.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://dyofp7wiflc06" path="res://assets/tileset/tilemap-roof.png" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bsy5t7os0rpij" path="res://scenes/toy.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://bk1klrybejniq" path="res://assets/placeholder/poweup_square.png" id="9_vtaks"]
 [ext_resource type="Texture2D" uid="uid://c4rfpsgwya32o" path="res://assets/placeholder/toy_sprite.png" id="10_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://dyofp7wiflc06" path="res://assets/sprites/tileset/tilemap-roof.png" id="5_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("3_lbhrr")
@@ -128,9 +129,11 @@ tile_set = SubResource("TileSet_0tnpc")
 position = Vector2(576, 352)
 game_manager = NodePath("..")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=1866762672]
-position = Vector2(576, 324)
-zoom = Vector2(2, 2)
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1866762672]
+position = Vector2(0, -28)
+zoom = Vector2(3, 3)
+process_callback = 0
+position_smoothing_enabled = true
 
 [node name="Dog" parent="." unique_id=899626893 node_paths=PackedStringArray("game_manager") instance=ExtResource("5_iywne")]
 position = Vector2(700, 378)

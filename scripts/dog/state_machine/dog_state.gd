@@ -7,12 +7,12 @@ extends Node
 var parent: Dog
 
 func enter() ->  void:
-	parent.DogAnimations.play(dog_animation_name)
+	parent.animations.play(dog_animation_name)
 
 func exit() -> void:
 	pass
 
-func process_phyisics(delta: float) -> Dog_State:
+func process_physics(delta: float) -> Dog_State:
 	return null
 
 func process_frame(delta: float) -> Dog_State:
