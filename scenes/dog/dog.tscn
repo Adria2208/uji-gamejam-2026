@@ -12,6 +12,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afgdo"]
 size = Vector2(44, 40)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dilyc"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ci4a"]
 atlas = ExtResource("1_ikmn5")
 region = Rect2(0, 0, 400, 400)
@@ -27,8 +29,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dilyc"]
-
 [node name="Dog" type="CharacterBody2D" unique_id=899626893]
 script = ExtResource("1_dilyc")
 
@@ -39,12 +39,6 @@ shape = SubResource("RectangleShape2D_afgdo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DogArea" unique_id=172702154]
 shape = SubResource("RectangleShape2D_afgdo")
-
-[node name="DogAnimations" type="AnimatedSprite2D" parent="." unique_id=1379789738]
-position = Vector2(9.536743e-07, 9.536743e-07)
-scale = Vector2(0.24, 0.24)
-sprite_frames = SubResource("SpriteFrames_n8nhp")
-animation = &"test"
 
 [node name="DogStateMachine" type="Node" parent="." unique_id=1685228326 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("1_1k8nb")
@@ -77,3 +71,9 @@ search_state = NodePath("../SearchingState")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384723258]
 shape = SubResource("CircleShape2D_dilyc")
 disabled = true
+
+[node name="DogAnimations" type="AnimatedSprite2D" parent="." unique_id=1379789738]
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(0.24, 0.24)
+sprite_frames = SubResource("SpriteFrames_n8nhp")
+animation = &"test"

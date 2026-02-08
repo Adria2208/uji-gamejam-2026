@@ -2,6 +2,8 @@ extends State
 
 @export
 var idle_state: State
+@export
+var interact_state: State
 
 var last_direction: Vector2 = Vector2.ZERO
 
@@ -27,6 +29,16 @@ func process_physics(delta: float) -> State:
 		"move_left", "move_right",
 		"move_up", "move_down"
 	).normalized()
+
+	match current_direction:
+		Vector2.UP:
+			parent.player_shape_cast.target_position = Vector2(0,-20)
+		Vector2.RIGHT:
+			parent.player_shape_cast.target_position = Vector2(20,0)
+		Vector2.DOWN:
+			parent.player_shape_cast.target_position = Vector2(0,20)
+		Vector2.LEFT:
+			parent.player_shape_cast.target_position = Vector2(-20,0)
 
 	parent.velocity = current_direction * move_speed
 	parent.move_and_slide()
@@ -54,3 +66,6 @@ func update_animation(direction: Vector2) -> void:
 		parent.animated_sprite.play(animation)
 
 	parent.animated_sprite.flip_h = direction.x < 0
+
+#func process_input(event: InputEvent) -> State:
+	#if Input.is_action_just_pressed("interact") and parent.player_shape_cast.collide_with_bodies

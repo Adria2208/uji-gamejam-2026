@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: Node = $StateMachine
-
+@onready var player_shape_cast: ShapeCast2D = $PlayerShapeCast
 
 func _ready() -> void:
 	# Initialize the state machine, passing a reference of the playerto the states,
