@@ -10,6 +10,8 @@ const VERTICAL_OFFSET: float = 500.0
 @onready var active_balls: Array = []
 @onready var timer_move_balls: Timer = $BallPicker
 
+@onready var is_player_interacting: bool = false
+
 func _ready() -> void:
 	for child in get_children():
 		if child is Ball:

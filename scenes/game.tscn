@@ -119,15 +119,16 @@ tile_set = SubResource("TileSet_gee14")
 tile_map_data = PackedByteArray("AAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAAABAAAAAAAPAAUAAAABAAAAAAAQAAUAAAABAAAAAAARAAUAAAABAAAAAAASAAUAAAABAAAAAAATAAUAAAABAAAAAAAUAAUAAAABAAAAAAAVAAUAAAABAAAAAAAWAAUAAAABAAAAAAAXAAUAAAABAAAAAAAYAAUAAAABAAAAAAAZAAUAAAABAAAAAAAJAAUAAAAAAAAAAAAaAAUAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_0tnpc")
 
-[node name="Player" parent="." unique_id=2031485755 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=2031485755 node_paths=PackedStringArray("game_manager") instance=ExtResource("1_uwrxv")]
 position = Vector2(576, 352)
+game_manager = NodePath("..")
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=1866762672]
 position = Vector2(576, 324)
 zoom = Vector2(2, 2)
 
 [node name="Dog" parent="." unique_id=899626893 node_paths=PackedStringArray("game_manager") instance=ExtResource("5_iywne")]
-position = Vector2(923, 421)
+position = Vector2(700, 378)
 game_manager = NodePath("..")
 
 [node name="BallPicker" type="Timer" parent="." unique_id=932920554]

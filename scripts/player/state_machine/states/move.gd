@@ -67,5 +67,8 @@ func update_animation(direction: Vector2) -> void:
 
 	parent.animated_sprite.flip_h = direction.x < 0
 
-#func process_input(event: InputEvent) -> State:
-	#if Input.is_action_just_pressed("interact") and parent.player_shape_cast.collide_with_bodies
+func process_input(event: InputEvent) -> State:
+	if Input.is_action_just_pressed("interact"):
+		if parent.player_shape_cast.is_colliding() and parent.player_shape_cast.get_collider(0) is Dog:
+			return interact_state
+	return null
