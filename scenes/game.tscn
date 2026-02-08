@@ -123,9 +123,11 @@ tile_set = SubResource("TileSet_0tnpc")
 position = Vector2(576, 352)
 game_manager = NodePath("..")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=1866762672]
-position = Vector2(576, 324)
-zoom = Vector2(2, 2)
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1866762672]
+position = Vector2(0, -28)
+zoom = Vector2(3, 3)
+process_callback = 0
+position_smoothing_enabled = true
 
 [node name="Dog" parent="." unique_id=899626893 node_paths=PackedStringArray("game_manager") instance=ExtResource("5_iywne")]
 position = Vector2(700, 378)
