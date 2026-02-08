@@ -25,8 +25,6 @@ func process_physics(delta: float) -> Dog_State:
 	var direction: Vector2 = (parent.position - parent.closest_ball.position)
 	var animation: String = ""
 	
-	print(direction)
-
 	if abs(direction.x) > abs(direction.y):
 		animation = "move_side"
 	elif direction.y < 0:
@@ -35,9 +33,8 @@ func process_physics(delta: float) -> Dog_State:
 		animation = "move_up"
 		
 	if parent.animations.animation != animation:
-		print(animation)
 		parent.animations.play(animation)
-
+	
 	parent.animations.flip_h = direction.x < 0
 	
 	return null

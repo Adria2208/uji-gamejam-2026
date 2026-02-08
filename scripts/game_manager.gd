@@ -2,8 +2,8 @@ extends Node
 
 const BALL_NUMBER: int = 20
 
-const MIN_MARGIN: Vector2 = Vector2(300,170)
-const MAX_MARGIN: Vector2 = Vector2(860,485)
+const MIN_MARGIN: Vector2 = Vector2(310,200)
+const MAX_MARGIN: Vector2 = Vector2(850,450)
 const VERTICAL_OFFSET: float = 500.0
 
 @onready var player_has_object: bool = false
@@ -13,6 +13,8 @@ const VERTICAL_OFFSET: float = 500.0
 @onready var is_player_interacting: bool = false
 @export var toy: PackedScene = preload("res://scenes/toy.tscn")
 @onready var player_toy: Sprite2D = $UI/PlayerToy
+
+@onready var total_points: int
 
 var timer_spawn_objects: Timer
 
@@ -42,13 +44,13 @@ func _on_ball_picker_timeout() -> void:
 		pass
 
 func _on_spawn_objects_timeout() -> void:
-	var new_spawn_timer_time = 200.0
-	#randi_range(5,10)
+	var new_spawn_timer_time = randi_range(5,10)
 	timer_spawn_objects.wait_time = new_spawn_timer_time
 	
 	var spawned_toy = toy.instantiate()
 	get_tree().current_scene.add_child(spawned_toy)
 	spawned_toy.position = get_random_point(MIN_MARGIN,MAX_MARGIN)
+	spawned_toy.scale *= 0.6
 	
 func add_player_toy():
 	player_toy.show()

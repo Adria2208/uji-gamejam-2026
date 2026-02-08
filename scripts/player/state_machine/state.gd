@@ -4,7 +4,7 @@ extends Node
 @export
 var animation_name: String
 @export
-var move_speed : float = 600.0
+var move_speed : float = 50.0
 
 ## Hold a reference to the parent so that it can be controlled by the state
 var parent: Player
