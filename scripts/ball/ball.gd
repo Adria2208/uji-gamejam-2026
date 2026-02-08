@@ -53,6 +53,5 @@ func _on_ball_area_body_entered(body: Node2D) -> void:
 	if body is Dog:
 		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP_DOG)
 	if body is Player:
-		game_manager.total_points += 1
-		game_manager.total_points_label.text = "Pelotas totales: " + str(game_manager.total_points)
+		game_manager.add_score()
 		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP)

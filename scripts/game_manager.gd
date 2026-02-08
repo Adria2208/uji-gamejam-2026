@@ -14,8 +14,10 @@ const VERTICAL_OFFSET: float = 500.0
 @export var toy: PackedScene = preload("res://scenes/toy.tscn")
 @onready var player_toy: Sprite2D = $CanvasLayer/PlayerToy
 @onready var general_timer: Timer = $GeneralTimer
-@onready var total_points_label: RichTextLabel = $CanvasLayer/RichTextLabel
+@onready var tiempo_restante: RichTextLabel = $CanvasLayer/TiempoRestante
+@onready var ball_counter: RichTextLabel = $CanvasLayer/BallCounter
 @onready var total_points: int
+@onready var tiempo_en_segundos: int
 
 var timer_spawn_objects: Timer
 
@@ -61,3 +63,17 @@ func add_player_toy():
 
 func _on_general_timer_timeout() -> void:
 	get_tree().quit()
+
+func display_time()-> void:
+	tiempo_en_segundos += 1
+	var m = int(tiempo_en_segundos/60)
+	var s = tiempo_en_segundos - m * 60
+	tiempo_restante.text = '%02d:%02d' % [m,s]
+
+func add_score():
+	total_points += 1
+	ball_counter.text = "Pelotas totales: " + str(total_points)
+
+
+func _on_timer_segundos_timeout() -> void:
+	display_time()

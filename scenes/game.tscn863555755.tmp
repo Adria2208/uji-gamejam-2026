@@ -252,7 +252,6 @@ wait_time = 2.0
 autostart = true
 
 [node name="TimerSegundos" type="Timer" parent="." unique_id=1156328823]
-autostart = true
 
 [node name="Bola" parent="." unique_id=652451009 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
@@ -324,13 +323,13 @@ texture = ExtResource("11_rysoc")
 
 [node name="UIBallBackground" type="Sprite2D" parent="CanvasLayer" unique_id=2134230271]
 modulate = Color(0.35625, 0.34623045, 0.34623045, 1)
-position = Vector2(131.00002, 53)
-scale = Vector2(210, 67.207344)
+position = Vector2(143.5, 53)
+scale = Vector2(234.99998, 67.207344)
 texture = SubResource("CanvasTexture_dinhu")
 
 [node name="BallOutline" type="Sprite2D" parent="CanvasLayer" unique_id=1462137999]
-position = Vector2(131.25, 52)
-scale = Vector2(8.609376, 2.4375)
+position = Vector2(144.24998, 52)
+scale = Vector2(9.421875, 2.4375)
 texture = ExtResource("11_rysoc")
 
 [node name="PlayerToy" type="Sprite2D" parent="CanvasLayer" unique_id=35574466]
@@ -341,7 +340,7 @@ texture = ExtResource("12_ssvqc")
 [node name="BallCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=1797310380]
 offset_left = 77.0
 offset_top = 24.0
-offset_right = 238.0
+offset_right = 241.0
 offset_bottom = 81.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -357,22 +356,23 @@ texture = ExtResource("18_ssvqc")
 
 [node name="TimerBackground" type="Sprite2D" parent="CanvasLayer" unique_id=699932695]
 modulate = Color(0.35625, 0.34623045, 0.34623045, 1)
-position = Vector2(1047.25, 55.698166)
-scale = Vector2(126.50005, 62.60368)
+position = Vector2(1024, 56)
+scale = Vector2(234.99998, 67.207344)
 texture = SubResource("CanvasTexture_dinhu")
 
 [node name="TimerOutline" type="Sprite2D" parent="CanvasLayer" unique_id=751038640]
-position = Vector2(1046.875, 56)
-scale = Vector2(5.0546875, 2.4375)
+position = Vector2(1022, 54)
+scale = Vector2(9.421875, 2.4375)
 texture = ExtResource("11_rysoc")
 
 [node name="TiempoRestante" type="RichTextLabel" parent="CanvasLayer" unique_id=343806306]
-offset_left = 1002.0
-offset_top = 38.0
-offset_right = 1094.0
-offset_bottom = 78.0
+offset_left = 917.0
+offset_top = 33.0
+offset_right = 1047.0
+offset_bottom = 73.0
 theme_override_fonts/normal_font = ExtResource("17_rysoc")
-text = "00:00"
+text = "Ejemplo
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
