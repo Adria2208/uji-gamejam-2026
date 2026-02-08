@@ -10,6 +10,7 @@ extends Node2D
 
 var is_ball_active: bool = false #Elegible para caer
 var is_ball_pickable: bool = false #Se puede interactuar con ella
+var has_played_pop_sfx: bool = false
 var ball_position: Vector2
 var destination: Vector2
 
@@ -21,7 +22,6 @@ func move_ball_downwards(current_ball: Ball) -> void:
 	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN) 
 	current_ball.is_ball_active = true
 	current_ball.ball_area_collision.disabled = true
-
 	
 func move_ball_upwards(current_ball: Ball) -> void:
 	var ball_index: int
@@ -36,7 +36,7 @@ func move_ball_upwards(current_ball: Ball) -> void:
 	current_ball.position = destination
 	is_ball_active = false
 	is_ball_pickable = false
-
+	has_played_pop_sfx = false
 
 func _process(delta: float) -> void:
 	if is_ball_active:
@@ -44,7 +44,9 @@ func _process(delta: float) -> void:
 		if abs(global_position - destination) < Vector2(10.0,10.0):
 			ball_area_collision.disabled = false
 			is_ball_pickable = true
-
+			if !has_played_pop_sfx:
+				AudioManager.create_2d_audio_at_location(self.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_POP)
+				has_played_pop_sfx = true
 
 func _on_ball_area_body_entered(body: Node2D) -> void:
 	move_ball_upwards(self)
