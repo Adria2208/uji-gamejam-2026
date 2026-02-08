@@ -371,8 +371,24 @@ offset_left = 1002.0
 offset_top = 38.0
 offset_right = 1094.0
 offset_bottom = 78.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("17_rysoc")
 text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverText" type="Label" parent="CanvasLayer" unique_id=1560923166]
+offset_left = 361.0
+offset_top = 285.0
+offset_right = 830.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 50
+text = "Game Over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

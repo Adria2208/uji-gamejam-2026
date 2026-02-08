@@ -19,6 +19,8 @@ const VERTICAL_OFFSET: float = 500.0
 @onready var total_points: int
 @onready var tiempo_en_segundos: int
 
+@onready var game_over_text: Label = $CanvasLayer/GameOverText
+
 var timer_spawn_objects: Timer
 
 func _ready() -> void:
@@ -27,6 +29,7 @@ func _ready() -> void:
 			ball_array.append(child)
 
 	player_toy.hide()
+	game_over_text.hide()
 	timer_spawn_objects = $SpawnObjects
 
 
@@ -62,7 +65,16 @@ func add_player_toy():
 
 
 func _on_general_timer_timeout() -> void:
-	get_tree().quit()
+	game_over_text.show()
+	var game_over: bool = false
+	game_over = false
+	tiempo_restante.text = "01:30"
+	await get_tree().create_timer(3.0).timeout
+	game_over = true
+	
+	
+	if game_over:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func display_time()-> void:
 	tiempo_en_segundos += 1
