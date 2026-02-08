@@ -52,5 +52,7 @@ func _on_ball_area_body_entered(body: Node2D) -> void:
 	move_ball_upwards(self)
 	if body is Dog:
 		print("Ha entrado morcillo")
+		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP_DOG)
 	if body is Player:
+		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP)
 		print("Ha entrado manolo")
