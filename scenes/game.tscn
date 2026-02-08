@@ -310,6 +310,7 @@ position = Vector2(352, 316)
 texture = ExtResource("14_trtic")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1781376053]
+follow_viewport_scale = 0.25
 
 [node name="ToyBackground" type="Sprite2D" parent="CanvasLayer" unique_id=1315063551]
 modulate = Color(0.35625, 0.34623045, 0.34623045, 1)

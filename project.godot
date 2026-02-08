@@ -24,6 +24,10 @@ buses/default_bus_layout="uid://c4iim5157hv8q"
 AudioManager="*uid://c1ntyuni6i2vj"
 Music="*uid://dmbfij2yjv710"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 BodyBallPicker=""
