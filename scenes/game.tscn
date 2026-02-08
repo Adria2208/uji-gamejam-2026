@@ -72,12 +72,12 @@ game_manager = NodePath("..")
 
 [node name="Bola2" parent="." unique_id=1656677400 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
-position = Vector2(832, -198)
+position = Vector2(669, -132)
 game_manager = NodePath("..")
 
 [node name="Bola3" parent="." unique_id=980727318 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
-position = Vector2(832, -354)
+position = Vector2(547, -136)
 game_manager = NodePath("..")
 
 [node name="BallPicker" type="Timer" parent="." unique_id=932920554]
