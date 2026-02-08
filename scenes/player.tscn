@@ -265,7 +265,7 @@ script = ExtResource("4_dqkch")
 idle_state = NodePath("../Idle")
 interact_state = NodePath("../Interact")
 animation_name = "move_down"
-move_speed = 300.0
+move_speed = 250.0
 
 [node name="Interact" type="Node" parent="StateMachine" unique_id=1971363141 node_paths=PackedStringArray("idle_state")]
 script = ExtResource("9_y4r1p")

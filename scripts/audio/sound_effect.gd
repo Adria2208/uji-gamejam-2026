@@ -8,7 +8,8 @@ enum SOUND_EFFECT_TYPE {
 	DOG_BARK,
 	DOG_GROWL,
 	BALL_POP,
-	DOG_EATING
+	DOG_EATING,
+	PLAYER_STEP
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

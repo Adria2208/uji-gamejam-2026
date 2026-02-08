@@ -20,3 +20,6 @@ func _physics_process(delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+
+func play_step_sound() -> void:
+	AudioManager.create_2d_audio_at_location(self.position, SoundEffect.SOUND_EFFECT_TYPE.PLAYER_STEP)
