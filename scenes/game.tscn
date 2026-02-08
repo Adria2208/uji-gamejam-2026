@@ -243,17 +243,17 @@ autostart = true
 
 [node name="Bola" parent="." unique_id=652451009 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
-position = Vector2(420, -141)
+position = Vector2(437, -82)
 game_manager = NodePath("..")
 
 [node name="Bola2" parent="." unique_id=622930484 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
-position = Vector2(509, -92)
+position = Vector2(503, -80)
 game_manager = NodePath("..")
 
 [node name="Bola3" parent="." unique_id=780592068 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_lnu2h")]
 top_level = true
-position = Vector2(576, -59)
+position = Vector2(558, -77)
 game_manager = NodePath("..")
 
 [node name="Toy" parent="." unique_id=1156767745 instance=ExtResource("8_gee14")]

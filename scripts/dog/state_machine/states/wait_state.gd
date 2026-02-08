@@ -5,6 +5,7 @@ const WAIT_TIME = 2.0
 var has_waited: bool = false
 
 func enter()-> void:
+	parent.animations.play("idle")
 	has_waited = false
 	await get_tree().create_timer(WAIT_TIME).timeout
 	has_waited = true

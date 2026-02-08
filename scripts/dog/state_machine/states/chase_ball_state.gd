@@ -14,7 +14,7 @@ func process_frame(delta: float) -> Dog_State:
 	
 	parent.position = parent.position.move_toward(parent.closest_ball.position,delta * parent.dog_speed)
 	if parent.closest_ball.is_ball_pickable == true:
-		if parent.position.distance_to(parent.closest_ball.position) < 30.0:
+		if parent.position.distance_to(parent.closest_ball.position) < 10.0:
 			print("He mordido la pelota")
 			return bite_state
 	else:
