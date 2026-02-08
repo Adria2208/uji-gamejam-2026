@@ -138,7 +138,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ekxnf")
 layout_mode = 0
 offset_right = 306.0
 offset_bottom = 249.0
-text = "TUTORIAL:
+text = "TUTORIAL
 
 W,A,S,D to move
 E to give the dog a toy
