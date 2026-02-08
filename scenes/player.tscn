@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://tl8o51uxmgp1" path="res://scripts/player/state_machine/states/move.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://but2qg3iyxxbe" path="res://assets/sprites/player/player_move_side.png" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dvqr167gsuarx" path="res://assets/sprites/player/player_move_up.png" id="5_y4r1p"]
+[ext_resource type="Script" uid="uid://54iirecib6tp" path="res://scripts/player/state_machine/states/interact.gd" id="9_y4r1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
@@ -233,6 +234,8 @@ animations = [{
 radius = 6.1851754
 height = 33.889664
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
+
 [node name="Player" type="CharacterBody2D" unique_id=2031485755]
 script = ExtResource("1_qlg0r")
 
@@ -251,17 +254,28 @@ shape = SubResource("CapsuleShape2D_qlg0r")
 script = ExtResource("2_qhqgy")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=1330440581 node_paths=PackedStringArray("move_state")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1330440581 node_paths=PackedStringArray("move_state", "interact_state")]
 script = ExtResource("3_qhqgy")
 move_state = NodePath("../Move")
+interact_state = NodePath("../Interact")
 animation_name = "idle"
 
-[node name="Move" type="Node" parent="StateMachine" unique_id=318016170 node_paths=PackedStringArray("idle_state")]
+[node name="Move" type="Node" parent="StateMachine" unique_id=318016170 node_paths=PackedStringArray("idle_state", "interact_state")]
 script = ExtResource("4_dqkch")
 idle_state = NodePath("../Idle")
+interact_state = NodePath("../Interact")
 animation_name = "move_down"
 move_speed = 300.0
+
+[node name="Interact" type="Node" parent="StateMachine" unique_id=1971363141 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("9_y4r1p")
+idle_state = NodePath("../Idle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2019361627]
 position = Vector2(0, 23)
 texture = ExtResource("2_ur7pv")
+
+[node name="PlayerShapeCast" type="ShapeCast2D" parent="." unique_id=434174902]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ur7pv")
+target_position = Vector2(0, 20)

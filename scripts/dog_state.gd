@@ -7,7 +7,7 @@ extends Node
 var parent: Dog
 
 func enter() ->  void:
-	parent.DogAnimations.play(dog_animation_name)
+	parent.Dog_Animations.play(dog_animation_name)
 
 func exit() -> void:
 	pass
