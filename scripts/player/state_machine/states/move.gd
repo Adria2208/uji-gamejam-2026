@@ -69,6 +69,7 @@ func update_animation(direction: Vector2) -> void:
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed("interact"):
-		if parent.player_shape_cast.is_colliding() and parent.player_shape_cast.get_collider(0) is Dog:
-			return interact_state
+		if parent.game_manager.player_has_object:
+			if parent.player_shape_cast.is_colliding() and parent.player_shape_cast.get_collider(0) is Dog:
+				return interact_state
 	return null

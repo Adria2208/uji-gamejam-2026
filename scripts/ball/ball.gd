@@ -19,8 +19,8 @@ func _ready() -> void:
 
 func move_ball_downwards(current_ball: Ball) -> void:
 	destination = game_manager.get_random_point(game_manager.MIN_MARGIN,game_manager.MAX_MARGIN) 
-	is_ball_active = true
-	ball_area_collision.disabled = true
+	current_ball.is_ball_active = true
+	current_ball.ball_area_collision.disabled = true
 
 	
 func move_ball_upwards(current_ball: Ball) -> void:

@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ojs817hoakhc" path="res://scenes/dog/dog.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://dyofp7wiflc06" path="res://assets/tileset/tilemap-roof.png" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bsy5t7os0rpij" path="res://scenes/toy.tscn" id="8_gee14"]
-[ext_resource type="Texture2D" uid="uid://bk1klrybejniq" path="res://assets/placeholder/poweup_square.png" id="9_vtaks"]
-[ext_resource type="Texture2D" uid="uid://c4rfpsgwya32o" path="res://assets/placeholder/toy_sprite.png" id="10_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("3_lbhrr")
@@ -105,8 +103,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_gee14")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_dinhu"]
-
 [node name="MainGame" type="Node2D" unique_id=999736679]
 script = ExtResource("1_yqjtg")
 
@@ -160,24 +156,6 @@ game_manager = NodePath("..")
 
 [node name="Toy" parent="." unique_id=1156767745 instance=ExtResource("8_gee14")]
 position = Vector2(465, 345)
-
-[node name="UI" type="Node" parent="." unique_id=339193104]
-
-[node name="ObjectBackground2" type="Sprite2D" parent="UI" unique_id=443499021]
-modulate = Color(0.35625, 0.34623045, 0.34623045, 1)
-position = Vector2(816.99994, 431.51788)
-scale = Vector2(26, 24.964258)
-texture = SubResource("CanvasTexture_dinhu")
-
-[node name="ObjectBackground" type="Sprite2D" parent="UI" unique_id=1623440450]
-position = Vector2(817, 431.44702)
-scale = Vector2(0.93750006, 0.96543884)
-texture = ExtResource("9_vtaks")
-
-[node name="PlayerToy" type="Sprite2D" parent="UI" unique_id=1497472928]
-position = Vector2(818.5, 430.7384)
-scale = Vector2(0.59375, 0.59375)
-texture = ExtResource("10_kvpfn")
 
 [connection signal="timeout" from="SpawnObjects" to="." method="_on_spawn_objects_timeout"]
 [connection signal="timeout" from="BallPicker" to="." method="_on_ball_picker_timeout"]
