@@ -51,8 +51,8 @@ func _process(delta: float) -> void:
 func _on_ball_area_body_entered(body: Node2D) -> void:
 	move_ball_upwards(self)
 	if body is Dog:
-		print("Ha entrado morcillo")
 		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP_DOG)
 	if body is Player:
+		game_manager.total_points += 1
+		game_manager.total_points_label.text = "Pelotas totales: " + str(game_manager.total_points)
 		AudioManager.create_2d_audio_at_location(body.position, SoundEffect.SOUND_EFFECT_TYPE.BALL_PICKUP)
-		print("Ha entrado manolo")
